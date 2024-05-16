@@ -1,0 +1,49 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.header{
+    text-align: center;
+    height: 10vh;
+}
+
+.section-1{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.container{
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    width: 100vw;
+    justify-content: space-around;
+
+}
+
+.btn{
+    
+    padding: 10px;
+    cursor: pointer;
+}
+
+.options{
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    height: 30vh;
+    width: 30vw;
+    gap: 15px;
+}
+
+.question{
+    margin-bottom: 30px;
+}
