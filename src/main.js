@@ -20,6 +20,11 @@ async function fetchdata() {
 
         runGame(); 
 
+        answers.forEach((element) => {
+
+            element.addEventListener('click',(event)=>checkAnswer(element.textContent,event))
+            })
+
     } catch (error) {
         console.log(error);
     }
@@ -53,26 +58,49 @@ function runGame(){
     for(let i=0;i<allAnswers.length;i++){
         const button = document.querySelector(`.btn[answer-btn="${i}"]`);
         console.log(button);
-        document.querySelector(`.btn[answer-btn="${i}"]`).textContent = allAnswers[i];
+        document.querySelector(`.btn[answer-btn="${i}"]`).innerHTML = allAnswers[i];
     }
 
 }
 
-answers.forEach((element) => {
 
-element.addEventListener('click',()=>checkAnswer(element.textContent))
-})
 
-function checkAnswer(text){
+function checkAnswer(text,event){
+    const correct_answer = questionsAnswers[questionTracker].correct_answer;
 
-    if(text === questionsAnswers[questionTracker].correct_answer){
+    if(text === correct_answer){
         alert("Answer Was Right");
         questionTracker++;
-        runGame();
+        event.target.style.backgroundColor = "rgba(158, 255, 113, 0.562)";
+
+        setTimeout(function(){
+            event.target.style.backgroundColor = "white";
+          runGame();
+
+        },2000)
+          
+
+        
+       
     }else{
         alert("answer was wrong");
-        questionTracker++;
-        runGame();
+        
+        event.target.style.backgroundColor = "rgba(247, 123, 123, 0.589)"
+       const correct_element = Array.from(answers).find((element)=>{
+            return element.textContent === questionsAnswers[questionTracker].correct_answer;
+        })
+
+        if (correct_element) {
+            correct_element.style.backgroundColor = "rgba(158, 255, 113, 0.562)";
+        }
+        
+        setTimeout(function(){
+            event.target.style.backgroundColor = "white";
+            correct_element.style.backgroundColor = "white";
+            questionTracker++;
+          runGame();
+
+        },2000)
     }
 
 }
