@@ -66,10 +66,14 @@ function runGame(){
 
 
 function checkAnswer(text,event){
+
+    
+
+
     const correct_answer = questionsAnswers[questionTracker].correct_answer;
 
     if(text === correct_answer){
-        alert("Answer Was Right");
+        
         questionTracker++;
         event.target.style.backgroundColor = "rgba(158, 255, 113, 0.562)";
 
@@ -77,13 +81,13 @@ function checkAnswer(text,event){
             event.target.style.backgroundColor = "white";
           runGame();
 
-        },2000)
+        },500)
           
 
         
        
     }else{
-        alert("answer was wrong");
+        
         
         event.target.style.backgroundColor = "rgba(247, 123, 123, 0.589)"
        const correct_element = Array.from(answers).find((element)=>{
@@ -97,12 +101,15 @@ function checkAnswer(text,event){
         setTimeout(function(){
             event.target.style.backgroundColor = "white";
             correct_element.style.backgroundColor = "white";
+            
             questionTracker++;
+        
           runGame();
 
-        },2000)
+        },500)
     }
 
+   
 }
 
 
