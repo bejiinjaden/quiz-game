@@ -5,26 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Game</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <div class="header"> <h1>QUIZ GAME</h1></div>
 
- <div class="section-1">
+    <div style="display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;" class="container">
+    <div class="category">
+        <select class="category_select">
+            <option value="General Knowledge">General Knowledge</option>
+            <option value="Science&Nature">Science & Nature</option>
+            <option value="Science: Computers">Science: Computers</option>
+            <option value="Science: Math">Science: Math</option>
+            <option value="Entertainment: Books">Entertainment: Books</option>
+            <option value="Entertainment: Film">Entertainment: Film</option>
+            <option value="Entertainment: Music">Entertainment: Music</option>
+            <option value="Entertainment: Anime">Entertainment: Anime</option>
+            <option value="Mythology">Mythology</option>
+            <option value="History">History</option>
+            <option value="Sports">Sports</option>
+            <option value="Random">Random</option>
+        </select>
 
-    <div class="container">
-        <h2 class="question">Question</h2>
-
-        <div class="options">
-
-            <button class="btn" answer-btn=0>answer</button>
-            <button class="btn" answer-btn=1>answer</button>
-            <button class="btn" answer-btn=2>answer</button>
-            <button class="btn" answer-btn=3>answer</button>
-
-        </div>
+        <button class="play-btn">Play</button>
     </div>
- </div>
+</div>
 
- <script src="src/main.js"></script>
+    
+
+ <script type="module" src="src/category.js"></script>
+ <script type="module"src="src/main.js"></script>
 </body>
 </html>

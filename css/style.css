@@ -55,4 +55,38 @@
 
 .question{
     margin-bottom: 30px;
+    
+}
+
+
+
+.category{
+    height: 30vh;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+
+}
+
+.category_select{
+    padding: 10px;
+    cursor: pointer;
+    background-color: aliceblue;
+    border: 1px solid;
+    border-radius: 4px;
+}
+
+.play-btn{
+    background-color: white;
+    border: 1px solid skyblue;
+    padding: 20px 40px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: ease-out 0.8s;
+    font-weight: 900;
+}
+
+.play-btn:hover{
+    box-shadow: inset 400px 0 0 0 skyblue;
+    color: white;
 }
